@@ -1,0 +1,67 @@
+<!-- DATE DE CREATION: 30/04/99 -->
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META NAME="Description" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Author" CONTENT="Usager non enregistré">
+<META NAME="Generator" CONTENT="WebExpert">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Debut du script
+var i=0;
+imag=Array;
+imag[0]="S_1.gif";
+imag[1]="S_2.gif";
+imag[2]="S_3.gif";
+imag[3]="S_4.gif";
+imag[4]="S_5.gif";
+imag[5]="S_6.gif";
+imag[6]="S_7.gif";
+imag[7]="S_8.gif";
+var imi=0;
+var sens=1;
+var runi=0;
+
+function loadImage()  {
+
+if (runi==1) {
+	if (imi==0) soundme.src="honk.mp3";
+	pouet.src=imag[imi];
+	imi=imi+sens;
+	if (imi>=7 || imi<=0) sens=-sens;
+
+	imi=imi+sens;
+	tempo=window.setTimeout ("loadImage()",100);
+	}
+ }
+
+	function stop() {
+	clearTimeout(tempo);
+	back.style.zIndex=11;
+	runi=0;
+	}
+
+//  Fin du script -->
+</SCRIPT>
+</HEAD>
+<BODY >
+
+<MAP NAME=mymap>
+
+<AREA HREF="#ici" ALT="" shape="Circle" Coords="285,185,20" 
+onClick="runi=runi+1;back.style.zIndex=0;loadImage();">
+</MAP>
+<A name="ici"></A>
+<AUDIO id="soundme" autoplay><SOURCE src="honk.mp3"></AUDIO>
+
+<IMG id="back" SRC="wd.jpg"  USEMAP="#mymap"
+STYLE="width:600;position:absolute;Top=10;Left:10;z-index:10;">
+
+
+
+<IMG id="pouet" src="S_1.gif" 
+STYLE="position:absolute;Top:145;Left:20;z-index:9;" 
+onClick="stop();">
+
+</BODY>
+</HTML>
